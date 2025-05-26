@@ -1,12 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Exo 2", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.1rem !important;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Sora:wght@100..800&display=swap');
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace !important;
@@ -33,17 +35,21 @@ a:hover {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 
-p, a, h1, h2, h3, h4, h5, label, button {
+p, a, h3, h4, h5, label, button {
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Sora", sans-serif;
+}
+
+h1, h2 {
+  color: white;
+  font-family: 'Orbitron';
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 4em;
+  letter-spacing: 0.01em;
   text-align: center;
-  font-weight: 400;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  font-weight: 300;
 }
 
 

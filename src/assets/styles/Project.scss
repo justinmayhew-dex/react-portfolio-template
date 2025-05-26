@@ -5,6 +5,13 @@
     text-align: left;
 }
   
+
+.projects-container h2 {
+    font-family: 'Orbitron';
+    letter-spacing: 0.05em;
+    font-weight: 300;
+}
+
 .projects-container .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
