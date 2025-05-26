@@ -15,7 +15,12 @@ code {
 
 .main-container {
   position: relative;
-  background-color: #0d1116;
+  background-color: rgb(13, 13, 13);
+  --accent-color: rgb(187, 0, 255);
+  --accent-color-dim: rgba(187, 0, 255, 0.5);
+  --bg-color: rgb(13, 13, 13);
+  --card-bg: rgba(16, 16, 16, 0.8);
+  --border-color: rgb(35, 35, 35);
 
 }
 
@@ -32,6 +37,16 @@ p, a, h1, h2, h3, h4, h5, label, button {
   color: white;
   font-family: "Lato", sans-serif;
 }
+
+h1 {
+  font-size: 56px;
+  text-align: center;
+  font-weight: 400;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+
 
 .navigation-bar {
   justify-content: space-between;
