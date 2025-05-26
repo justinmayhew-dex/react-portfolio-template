@@ -4,6 +4,9 @@
   margin-right: 5px;
 }
 
+.contact_wrapper p {
+  text-align: center;
+}
 .contact-form {
   padding-top: 20px;
 
@@ -45,4 +48,17 @@ form {
 .body-form {
   width: 100% !important;
   margin-bottom: 15px !important;
+  color: white;
+}
+
+.body-form label { 
+  color: white !important;
+}
+
+.form-flex label { 
+  color: white !important;
+}
+
+.contact-form fieldset {
+  background-color: var(--card-bg);
 }
