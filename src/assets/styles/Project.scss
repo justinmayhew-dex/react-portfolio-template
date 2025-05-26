@@ -30,6 +30,23 @@
     transform: scale(1.05);
 }
 
+.mock01 {
+    padding: 10%;
+    background-color: rgba(255, 255, 0, 0.719);
+}
+.mock02 {
+    padding: 10%;
+    background-color: rgba(15, 170, 90, 0.692);
+}
+.mock03 {
+    padding: 10%;
+    background-color: rgba(32, 58, 204, 0.696);
+}
+.mock04 {
+    padding: 13.5% 10%;
+    background-color: rgba(195, 101, 6, 0.696);
+}
+
 @media screen {
     @media (max-width: 700px) {
         .projects-container {
