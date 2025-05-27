@@ -45,8 +45,8 @@ export default function Waves() {
         const h3 = height * 0.3
         const ow0 = (j * 5) + 40
         const oh0 = height + 50 + (10 * j) 
-        const ow1 = 300 - (j * 10) + (change2 * 300)
-        const oh1 = (j * 10) + 100  + (change1 * 100)
+        const ow1 = 400 - (j * 10) + (change2 * 200)
+        const oh1 = (j * 10) + 100  + (change1 * 150)
         const ow2 = 200 + (change1 * 100)
         const oh2 = (j * 10)  + (change2 * 300)
         const ow3 = 200 
