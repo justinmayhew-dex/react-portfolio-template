@@ -2,11 +2,13 @@ import React from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import '../assets/styles/Main.scss';
+import Waves from "./Waves";
 
 function Main() {
 
   return (
     <div className="container">
+      <Waves/>
       <div className="about-section">
         <div className="image-wrapper">
           <img src="https://res.cloudinary.com/dmmapotba/image/upload/c_crop,g_auto,h_800,w_800/kxug4ej2fulrry4z8o6s" alt="Avatar" />
