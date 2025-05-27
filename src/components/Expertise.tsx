@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
@@ -10,38 +10,42 @@ const labelsSecond = ["Git", "GitHub Actions", "Docker", "AWS", "Azure", "Linux"
 const labelsThird = ["OpenAI", "Groq", "LangChain", "Qdrant", "Hugging Face", "LlamaIndex", "Streamlit"];
 
 function Expertise() {
-    const skillRefs = [useRef(null), useRef(null), useRef(null)];
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     useEffect(() => {
-        if (window.outerWidth > 768) return
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = skillRefs.findIndex(ref => ref.current === entry.target);
-                        if (index !== -1) {
-                            setActiveIndex(index);
+        function applyObserver() {
+            if (window.outerWidth > 768) return
+            const skillRefs = Array.from(document.querySelectorAll('.skill'))
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    if (!skillRefs) return
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const index = skillRefs.findIndex(ref => ref === entry.target);
+                            if (index !== -1) {
+                                setActiveIndex(index);
+                            }
                         }
-                    }
-                });
-            },
-            { threshold: 1 }
-        );
-
-        skillRefs.forEach(ref => {
-            if (ref.current) {
-                observer.observe(ref.current);
-            }
-        });
-
-        return () => {
+                    });
+                },
+                { threshold: 1 }
+            );
+    
             skillRefs.forEach(ref => {
-                if (ref.current) {
-                    observer.unobserve(ref.current);
+                if (ref) {
+                    observer.observe(ref);
                 }
             });
-        };
+    
+            return () => {
+                skillRefs.forEach(ref => {
+                    if (ref) {
+                        observer.unobserve(ref);
+                    }
+                });
+            };
+        }
+        applyObserver()
     }, []);
 
     return (
@@ -52,7 +56,6 @@ function Expertise() {
                     {[labelsFirst, labelsSecond, labelsThird].map((labels, i) => (
                         <div
                             key={i}
-                            ref={skillRefs[i]}
                             className={`skill ${activeIndex === i ? 'hover' : ''}`}
                         >
                             <FontAwesomeIcon icon={[faReact, faDocker, faPython][i]} size="3x" />

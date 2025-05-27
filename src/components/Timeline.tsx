@@ -8,34 +8,38 @@ function Timeline() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    const skillRefs = Array.from(document.querySelectorAll('.vertical-timeline-element-content'))
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = skillRefs.findIndex(ref => ref === entry.target);
-            if (index !== -1) {
-              setActiveIndex(index);
+    function applyObserver() {
+      const skillRefs = Array.from(document.querySelectorAll('.vertical-timeline-element-content'))
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = skillRefs.findIndex(ref => ref === entry.target);
+              if (index !== -1) {
+                setActiveIndex(index);
+              }
             }
-          }
-        });
-      },
-      { threshold: 1 }
-    );
+          });
+        },
+        { threshold: 1 }
+      );
 
-    skillRefs.forEach(ref => {
-      if (ref) {
-        observer.observe(ref);
-      }
-    });
-
-    return () => {
       skillRefs.forEach(ref => {
         if (ref) {
-          observer.unobserve(ref);
+          observer.observe(ref);
         }
       });
-    };
+
+      return () => {
+        skillRefs.forEach(ref => {
+          if (ref) {
+            observer.unobserve(ref);
+          }
+        });
+      };
+    }
+
+    applyObserver()
   }, []);
   const timelineData = [
     {
@@ -79,9 +83,9 @@ function Timeline() {
               iconStyle={{ background: '#fff', boxShadow: 'var(--bg-color) 0px 0px 0px 10px', width: '20px', height: '20px', marginTop: '35px' }}
 
             >
-                <h3 className="vertical-timeline-element-title">{item.title}</h3>
-                <h4 className="vertical-timeline-element-subtitle">{item.subtitle}</h4>
-                <p>{item.description}</p>
+              <h3 className="vertical-timeline-element-title">{item.title}</h3>
+              <h4 className="vertical-timeline-element-subtitle">{item.subtitle}</h4>
+              <p>{item.description}</p>
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
