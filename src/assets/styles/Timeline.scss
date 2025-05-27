@@ -26,14 +26,14 @@
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
 }
 
-.vertical-timeline-element-content:hover {
+.vertical-timeline-element-content:hover, .vertical-timeline-element.hover .vertical-timeline-element-content {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     border-color: var(--accent-color);
 }
 
 
-.vertical-timeline-element-content:hover {
+.vertical-timeline-element-content:hover, .vertical-timeline-element.hover .vertical-timeline-element-content {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     border-color: var(--accent-color);
@@ -51,7 +51,7 @@
     transition: opacity 0.3s ease;
 }
 
-.vertical-timeline-element-content:hover::after {
+.vertical-timeline-element-content:hover::after, .vertical-timeline-element.hover .vertical-timeline-element-content::after{
     opacity: 1;
 }
 

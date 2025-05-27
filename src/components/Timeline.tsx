@@ -1,10 +1,42 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss';
 
 function Timeline() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const skillRefs = Array.from(document.querySelectorAll('.vertical-timeline-element-content'))
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = skillRefs.findIndex(ref => ref === entry.target);
+            if (index !== -1) {
+              setActiveIndex(index);
+            }
+          }
+        });
+      },
+      { threshold: 1 }
+    );
+
+    skillRefs.forEach(ref => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      skillRefs.forEach(ref => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
+  }, []);
   const timelineData = [
     {
       date: "2022 - present",
@@ -40,16 +72,16 @@ function Timeline() {
           {timelineData.map((item, index) => (
             <VerticalTimelineElement
               key={index}
-              className="vertical-timeline-element--work"
+              className={`vertical-timeline-element--work ${activeIndex === index ? 'hover' : ''}`}
               contentStyle={{ background: 'var(--card-bg)', color: '#FFF' }}
               contentArrowStyle={{ borderRight: '7px solid white' }}
               date={item.date}
               iconStyle={{ background: '#fff', boxShadow: 'var(--bg-color) 0px 0px 0px 10px', width: '20px', height: '20px', marginTop: '35px' }}
-              
+
             >
-              <h3 className="vertical-timeline-element-title">{item.title}</h3>
-              <h4 className="vertical-timeline-element-subtitle">{item.subtitle}</h4>
-              <p>{item.description}</p>
+                <h3 className="vertical-timeline-element-title">{item.title}</h3>
+                <h4 className="vertical-timeline-element-subtitle">{item.subtitle}</h4>
+                <p>{item.description}</p>
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
