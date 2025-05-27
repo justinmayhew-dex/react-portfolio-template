@@ -55,7 +55,7 @@ export default function Waves() {
 
 
         ctx.beginPath();
-        ctx.moveTo(0 - j, height - 100 - j)
+        ctx.moveTo(0 - j, 300 - j)
         ctx.bezierCurveTo(ow0, oh0, w1 - ow1, h1 - oh1, w1, h1)
         ctx.bezierCurveTo(w1 + ow1, h1 + oh1, w2 - ow2, h2 - oh2, w2, h2)
         ctx.bezierCurveTo(w2 + ow2, h2 + oh2, w3 - ow3, h3 - oh3, w3, h3)

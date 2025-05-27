@@ -7,7 +7,7 @@ import Waves from "./Waves";
 function Main() {
 
   return (
-    <div className="container">
+    <div style={{overflow: 'hidden'}} className="container">
       <Waves/>
       <div className="about-section">
         <div className="image-wrapper">
