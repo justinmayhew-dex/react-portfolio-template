@@ -8,6 +8,7 @@
 
 .projects-container h2 {
     font-family: 'Orbitron';
+    font-size: 34px;
     letter-spacing: 0.05em;
     font-weight: 300;
 }
@@ -68,6 +69,11 @@
       
         .projects-container .projects-grid .project {
             padding-bottom: 5%;
+        }
+    }
+    @media (max-width: 567px) {
+        .projects-container p {
+            font-size: 14px;
         }
     }
 }

@@ -2,12 +2,12 @@
     margin-bottom: 6em;
 }
 .vertical-timeline span {
-    color: white;
+    color: var(--input-color);
     font-family: 'Courier Prime', monospace;
 }
 
 .vertical-timeline p {
-    color: white;
+    color: var(--input-color);
     font-weight: 400;
 }
 
@@ -15,6 +15,8 @@
        font-family: 'Orbitron';
     letter-spacing: 0.05em;
     font-weight: 300;
+    line-height: 1.2em;
+    margin-block-end: 0.8em;
 }
 .vertical-timeline-element-content {
     border: 1px solid var(--border-color);
@@ -56,11 +58,11 @@
 }
 
 .vertical-timeline-element p {
-    color: white;
+    color: var(--input-color);
 }
 
 .vertical-timeline-element h3 {
-    color: white;
+    color: var(--input-color);
     font-size: 34px;
     font-weight: 500;
 }
@@ -72,20 +74,23 @@
 }
 
 .vertical-timeline-element span {
-    color: white;
+    color: var(--input-color);
 }
 
 .vertical-timeline-element .vertical-timeline-element-date {
-    color: white;
+    color: var(--input-color);
 }
 
 .svg-inline--fa {
-    color: white;
+    color: var(--input-color);
 }
 
+.vertical-timeline.vertical-timeline--two-columns:before {
+    background-color: var(--input-color);
+}
 @media screen and (max-width: 1170px) {
     .vertical-timeline-element .vertical-timeline-element-date {
-        color: rgb(39, 40, 34);
+        color: rgb(131, 131, 131);
     }
      .vertical-timeline-element-icon {
         translate: 10px 0
@@ -100,5 +105,10 @@
     }
     .vertical-timeline-element-icon {
         translate: 20px 0
+    }
+}
+@media (max-width: 567px) {
+    .vertical-timeline p {
+        font-size: 14px;
     }
 }

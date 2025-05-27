@@ -72,16 +72,16 @@ function Timeline() {
     <div id="history">
       <div className="items-container">
         <h1>Career History</h1>
-        <VerticalTimeline>
+        <VerticalTimeline animate={false}>
           {timelineData.map((item, index) => (
             <VerticalTimelineElement
               key={index}
               className={`vertical-timeline-element--work ${activeIndex === index ? 'hover' : ''}`}
-              contentStyle={{ background: 'var(--card-bg)', color: '#FFF' }}
+              contentStyle={{ background: 'var(--card-bg)', color: 'var(--input-color)' }}
               contentArrowStyle={{ borderRight: '7px solid white' }}
               date={item.date}
-              iconStyle={{ background: '#fff', boxShadow: 'var(--bg-color) 0px 0px 0px 10px', width: '20px', height: '20px', marginTop: '35px' }}
-
+              dateClassName={"vertical-timeline-element-date"}
+              iconStyle={{ background: 'var(--input-color)', boxShadow: 'var(--bg-color) 0px 0px 0px 10px', width: '20px', height: '20px', marginTop: '35px' }}
             >
               <h3 className="vertical-timeline-element-title">{item.title}</h3>
               <h4 className="vertical-timeline-element-subtitle">{item.subtitle}</h4>

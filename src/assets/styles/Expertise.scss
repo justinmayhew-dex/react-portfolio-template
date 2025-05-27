@@ -27,14 +27,14 @@
     font-size: 18px;
 }
 
-.skill:hover, .skill.hover {
+.skill.hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     border-color: var(--accent-color);
 }
 
 
-.skill:hover, .skill.hover {
+.skill.hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     border-color: var(--accent-color);
@@ -52,7 +52,7 @@
     transition: opacity 0.3s ease;
 }
 
-.skill:hover::after, .skill.hover::after {
+.skill.hover::after {
     opacity: 1;
 }
 
@@ -60,7 +60,7 @@
     transition: transform 0.3s;
 }
 
-.skill:hover svg {
+.skill.hover svg {
     transform: scale(1.1);
 }
 
@@ -130,12 +130,36 @@
         
         .skills-container .skills-grid .skill {
             padding-bottom: 5%;
+            margin-bottom: 20%;
         }
     }
 
     @media (max-width: 567px) {
-        .skills {
-            font-size: 12px;
+        .skill p {
+            font-size: 14px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-color);
+        }
+
+
+        .skill:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-color);
+        }
+
+        .skill:hover::after {
+            opacity: 1;
+        }
+
+        .skill:hover svg {
+            transform: scale(1.1);
         }
     }
 }

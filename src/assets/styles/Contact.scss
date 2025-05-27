@@ -45,20 +45,27 @@ form {
   width: 100% !important;
 }
 
+form input, form textarea {
+  color: var(--input-color) !important;
+  position: relative;
+  z-index: 10;
+}
+
 .body-form {
   width: 100% !important;
   margin-bottom: 15px !important;
-  color: white;
+  color: var(--input-color);
 }
 
 .body-form label { 
-  color: white !important;
+  color: var(--input-color) !important;
 }
 
 .form-flex label { 
-  color: white !important;
+  color: var(--input-color) !important;
 }
 
 .contact-form fieldset {
   background-color: var(--card-bg);
+  opacity: 1;
 }

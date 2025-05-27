@@ -23,6 +23,7 @@ code {
   --bg-color: rgb(13, 13, 13);
   --card-bg: rgba(16, 16, 16, 0.8);
   --border-color: rgb(35, 35, 35);
+  --input-color: white;
 
 }
 
@@ -41,8 +42,12 @@ p, a, h3, h4, h5, label, button {
 }
 
 h1, h2 {
-  color: white;
+  color: var(--input-color);
   font-family: 'Orbitron';
+}
+
+body, html {
+  overflow-x: hidden;
 }
 
 h1 {
@@ -50,6 +55,13 @@ h1 {
   letter-spacing: 0.01em;
   text-align: center;
   font-weight: 300;
+  margin-block-start: 1.5em;
+  margin-block-end: 1.5em;
+  line-height: 1.2em;
+}
+
+h2 {
+  line-height: 1em;
 }
 
 
@@ -114,6 +126,8 @@ h1 {
 }
 
 .light-mode {
+  --input-color: black;
+  --card-bg: rgba(181, 181, 181, 0.568);
   background-color: #f8f9fa;
 
   .navigation-bar {
