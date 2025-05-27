@@ -20,7 +20,6 @@ export default function Waves() {
 
         const x = Math.sin(t * speed1 * 0.001 + 10.123) * 0.9;
         const y = Math.cos(t * speed2 * 0.001 + 42.789) * 0.9;
-        console.log(x, y)
         return {x, y};
 
     }
