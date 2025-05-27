@@ -69,7 +69,6 @@ export default function Waves() {
 
     const handleResize = () => {
       width = (canvas.width = Math.max(window.innerWidth, 1200));
-      height = (canvas.height = Math.max(window.innerHeight, 700));
     };
 
     window.addEventListener("resize", handleResize);
