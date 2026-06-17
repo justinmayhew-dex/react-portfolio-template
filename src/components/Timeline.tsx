@@ -41,30 +41,25 @@ function Timeline() {
 
     applyObserver()
   }, []);
+
   const timelineData = [
     {
-      date: "2022 - present",
-      title: "Computer Science",
-      subtitle: "Manchester, UK",
-      description: "Studied Computer Science BA at Manchester University",
+      date: "Jun 2024 - Present",
+      title: "Frontend Developer",
+      subtitle: "Hive Analytics · Freelance (Hybrid)",
+      description: "Own the full frontend lifecycle translating Figma designs to production. Built custom themes, JS plugins, and analytics pipelines that optimized conversion and reduced bounce rates by 40%.",
     },
     {
-      date: "2020 - 2022",
-      title: "Carbless",
-      subtitle: "Cairo, EG",
-      description: "Doing Frontend Development, Backend Development and Operations as the CTO of Carbless Egypt",
+      date: "Mar 2023 - Mar 2024",
+      title: "Software Engineer",
+      subtitle: "Infralayer · Full-time (On-site)",
+      description: "Full-stack startup role spanning frontend, tooling, and infrastructure. Built mobile webview feeds and engineered a custom Node.js/Bash AST JavaScript obfuscator from scratch.",
     },
     {
-      date: "2021 - 2021",
-      title: "Infralayer",
-      subtitle: "Cairo, EG",
-      description: "Full-stack Development, API Development, User Experience",
-    },
-    {
-      date: "2020 - 2020",
-      title: "Hive Analytics",
-      subtitle: "Chicago, IL",
-      description: "Frontend Developer for Hive Analytics",
+      date: "May 2021 - Apr 2023",
+      title: "Chief Operations Officer",
+      subtitle: "Carbless.Egypt · Full-time (Cairo, EG)",
+      description: "Managed startup operations while self-teaching development. Engineered internal Python tools and custom automated WhatsApp pipelines to streamline delivery logistics at scale.",
     },
   ];
 
